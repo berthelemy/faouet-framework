@@ -1,0 +1,98 @@
+body {
+    font-family: $baseFont;
+}
+
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+
+@media (min-width: 600px) {
+.page-wrapper { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+    .page-wrapper { grid-template-columns: repeat(3, 1fr); }
+  }
+
+
+  
+  
+  /* set up grid */
+  .grid-container {
+    background-color: pink;
+    display: grid;
+    grid-template-areas:
+    'header'
+    'text'
+    'carousel'
+    'about'
+    'contact'
+    'footer';
+    gap: 10px;
+    background-color: pink;
+    padding: 10px;
+  }
+  
+  @media (min-width: 600px) { /* Make into two columns for larger screens */
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+      'header header'
+      'text carousel'
+      'about contact'
+      'footer footer';
+    }
+  }
+  
+  /* Set up individual grid items */
+  
+  header {
+    grid-area: header;
+    padding: 1rem;
+    background-color: cornflowerblue;
+   }
+  
+  header nav ul {
+    margin-top: 0;
+    margin-right: 5%;
+    list-style: none;
+    text-align: right;
+  }
+  
+  header nav ul li {
+    float: left;
+    padding-left: 5%;
+  }
+  
+  header a {
+    text-decoration: none;
+    text-shadow: 0px 0px 0px red;
+    color:lightgray;
+    font-size: 1.5rem;
+  }
+    
+  section#carousel {
+    grid-area: carousel;
+    padding: 1rem;
+  }
+  section#text {
+    grid-area: text;
+    background-color: aliceblue;
+    padding: 1rem;
+  }
+  section#about {
+    grid-area:about;
+    padding: 1rem;
+  }
+  section#contact {
+    grid-area:contact;
+    padding: 1rem;
+  }
+  footer {
+    grid-area: footer;
+    padding: 1rem 1rem 5rem 1rem;
+    text-align: center;
+  }
